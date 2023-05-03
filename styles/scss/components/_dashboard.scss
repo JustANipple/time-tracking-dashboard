@@ -55,4 +55,88 @@
             }
         }
     }
+
+    /* Activity component */
+    .dashboard_block {
+        background-color: v.$work-bg;
+        border-radius: v.$border-radius;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .block_img {
+            max-width: 5rem;
+            position: absolute;
+            transform: translateY(-.5rem);
+            right: 1rem;            
+        }
+
+        .dashboard_activity {
+            background-color: v.$component-bg;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: inherit;
+            padding: 2rem 1.5rem;
+            margin-top: 2.5rem;
+            z-index: 1;
+
+            .activity_content {
+                display: flex;
+                flex-direction: column;
+
+                .content_type {
+
+                }
+
+                .content_time {
+                    font-size: calc(v.$fs * 1.75);
+                    font-weight: v.$fw-light;
+                }
+            }
+
+            .activity_utility {
+                display: flex;
+                flex-direction: column;
+                gap: 1.25rem;
+
+                .utility_dots {
+                    max-width: 1.5rem;
+                    margin-left: auto;
+                }
+
+                .utility_last_time {
+                    color: v.$last-week-text;
+                    font-weight: v.$fw-light;
+                    font-size: calc(v.$fs / 1.125);
+                }
+            }
+        }
+    }
+}
+
+/* Assigning bg colors */
+#work {
+    background-color: v.$work-bg;
+}
+
+#play {
+    background-color: v.$play-bg;
+}
+
+#study {
+    background-color: v.$study-bg;
+}
+
+#exercise {
+    background-color: v.$exercise-bg;
+}
+
+#social {
+    background-color: v.$social-bg;
+}
+
+#self-care {
+    background-color: v.$self-care-bg;
 }
