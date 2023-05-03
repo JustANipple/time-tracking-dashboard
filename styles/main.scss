@@ -2,4 +2,6 @@
 @use "scss/reset";
 @use "scss/variables";
 
-@use "scss/components/dashboard";
+@use "scss/components/dashboardContainer";
+@use "scss/components/dashboardHeader";
+@use "scss/components/dashboardComponent";

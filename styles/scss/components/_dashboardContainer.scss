@@ -1,0 +1,16 @@
+@use "../variables" as v;
+
+.dashboard {
+    display: grid;
+    gap: 1.5rem;
+    margin-block: 5rem;
+
+    @media screen and (min-width: v.$min-width) {
+        grid-template-areas: 
+        "header comp comp comp"
+        "header comp comp comp";
+        gap: 2rem;
+    }
+
+}
+

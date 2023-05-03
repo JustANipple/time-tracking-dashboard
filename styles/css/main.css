@@ -3,13 +3,13 @@
 /* Neutral */
 /* Font */
 /* Sizings */
+/* Media query */
 body {
   background-color: hsl(226, 43%, 10%);
   font-family: "Rubik", sans-serif;
   font-size: 1.125rem;
   color: white;
   display: grid;
-  place-content: center;
 }
 
 .sr_only {
@@ -35,7 +35,7 @@ body {
   margin: 0;
 }
 
-html, body {
+html {
   height: 100%;
 }
 
@@ -59,17 +59,29 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .dashboard {
   display: grid;
-  row-gap: 1.5rem;
-  /* Header */
-  /* Activity component */
+  gap: 1.5rem;
+  margin-block: 5rem;
 }
-.dashboard .dashboard_header {
+@media screen and (min-width: 48rem) {
+  .dashboard {
+    grid-template-areas: "header comp comp comp" "header comp comp comp";
+    gap: 2rem;
+  }
+}
+
+/* Header */
+.dashboard_header {
   background-color: hsl(235, 46%, 20%);
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
 }
-.dashboard .dashboard_header .header_avatar {
+@media screen and (min-width: 48rem) {
+  .dashboard_header {
+    grid-area: header;
+  }
+}
+.dashboard_header .header_avatar {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -77,36 +89,42 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 2rem;
   border-radius: inherit;
 }
-.dashboard .dashboard_header .header_avatar .avatar_img {
+.dashboard_header .header_avatar .avatar_img {
   max-width: 4.5rem;
   border: 0.1875rem solid white;
   border-radius: 100vw;
 }
-.dashboard .dashboard_header .header_avatar .avatar_info {
+.dashboard_header .header_avatar .avatar_info {
   color: hsl(236, 100%, 87%);
   font-weight: 300;
   font-size: 1rem;
 }
-.dashboard .dashboard_header .header_avatar .avatar_info .avatar_name {
+.dashboard_header .header_avatar .avatar_info .avatar_name {
   color: white;
   font-size: 1.40625rem;
 }
-.dashboard .dashboard_header .header_report_time {
+.dashboard_header .header_report_time {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 1.5rem;
+  padding-block: 1.25rem;
   padding-inline: 2rem;
 }
-.dashboard .dashboard_header .header_report_time .time_daily,
-.dashboard .dashboard_header .header_report_time .time_monthly {
+.dashboard_header .header_report_time .time_daily,
+.dashboard_header .header_report_time .time_weekly,
+.dashboard_header .header_report_time .time_monthly {
   font-weight: 300;
   color: hsl(235, 45%, 61%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
-.dashboard .dashboard_header .header_report_time .time_weekly {
+.dashboard_header .header_report_time .time_weekly {
   color: white;
 }
-.dashboard .dashboard_block {
+
+/* Activity component */
+.dashboard_block {
   background-color: hsl(15, 100%, 70%);
   border-radius: 1rem;
   overflow: hidden;
@@ -114,43 +132,45 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   position: relative;
 }
-.dashboard .dashboard_block .block_img {
+.dashboard_block .block_img {
   max-width: 5rem;
   position: absolute;
   transform: translateY(-0.5rem);
   right: 1rem;
 }
-.dashboard .dashboard_block .dashboard_activity {
+.dashboard_block .dashboard_activity {
   background-color: hsl(235, 46%, 20%);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
   border-radius: inherit;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   margin-top: 2.5rem;
   z-index: 1;
 }
-.dashboard .dashboard_block .dashboard_activity .activity_content {
+.dashboard_block .dashboard_activity .activity_header {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
-.dashboard .dashboard_block .dashboard_activity .activity_content .content_time {
-  font-size: 1.96875rem;
-  font-weight: 300;
-}
-.dashboard .dashboard_block .dashboard_activity .activity_utility {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-.dashboard .dashboard_block .dashboard_activity .activity_utility .utility_dots {
+.dashboard_block .dashboard_activity .activity_header .header_dots {
   max-width: 1.5rem;
   margin-left: auto;
 }
-.dashboard .dashboard_block .dashboard_activity .activity_utility .utility_last_time {
+.dashboard_block .dashboard_activity .activity_time {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.dashboard_block .dashboard_activity .activity_time .time_current {
+  font-size: 1.96875rem;
+  font-weight: 300;
+}
+.dashboard_block .dashboard_activity .activity_time .time_last {
   color: hsl(236, 100%, 87%);
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Assigning bg colors */

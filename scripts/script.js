@@ -29,17 +29,17 @@ function createActivities(data) {
         aria-hidden="true"
         class="block_img">
         <div class="dashboard_activity">
-          <div class="activity_content">
-            <p class="content_type">${type}</p>
-            <p class="content_time">${time}hrs</p>
-          </div>
-          <div class="activity_utility">
+          <div class="activity_header">
+            <p class="header_type">${type}</p>
             <img 
             src="images/icon-ellipsis.svg" 
             alt=""
             aria-hidden="true"
-            class="utility_dots">
-            <p class="utility_last_time">Last Week - ${lastTime}hrs</p>
+            class="header_dots">
+          </div>
+          <div class="activity_time">
+            <p class="time_current">${time}hrs</p>
+            <p class="time_last">Last Week - ${lastTime}hrs</p>
           </div>
         </div>
         `;
