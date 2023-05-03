@@ -1,0 +1,58 @@
+@use "../variables" as v;
+
+.dashboard {
+    display: grid;
+    row-gap: 1.5rem;
+
+    /* Header */
+    .dashboard_header {
+        background-color: v.$component-bg;
+        display: flex;
+        flex-direction: column;
+        border-radius: v.$border-radius;
+
+        .header_avatar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: v.$avatar-bg;
+            padding: 2rem;
+            border-radius: inherit;
+
+            .avatar_img {
+                max-width: 4.5rem;
+                border: .1875rem solid white;
+                border-radius: 100vw;
+            }
+
+            .avatar_info {
+                color: v.$last-week-text;
+                font-weight: v.$fw-light;
+                font-size: calc(v.$fs / 1.125);
+
+                .avatar_name {
+                    color: white;
+                    font-size: calc(v.$fs * 1.25);
+                }
+            }
+        }
+
+        .header_report_time {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-block: 1.5rem;
+            padding-inline: 2rem;
+
+            .time_daily,
+            .time_monthly {
+                font-weight: v.$fw-light;
+                color: v.$date-range-text;
+            }
+
+            .time_weekly {
+                color: white;
+            }
+        }
+    }
+}

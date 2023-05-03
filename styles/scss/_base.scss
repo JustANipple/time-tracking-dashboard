@@ -1,0 +1,21 @@
+@use "variables" as v;
+
+body {
+    background-color: v.$body-bg;
+    font-family: v.$ff;
+    font-size: v.$fs;
+    color: white;
+    display: grid;
+    place-content: center;
+}
+
+.sr_only {
+    position: absolute;
+    height: 0;
+    font-size: inherit;
+    color: transparent;
+}
+
+.container {
+    margin-inline: 1.5rem;
+}

@@ -1,0 +1,107 @@
+/* = Colors = */
+/* Primary */
+/* Neutral */
+/* Font */
+/* Sizings */
+body {
+  background-color: hsl(226, 43%, 10%);
+  font-family: "Rubik", sans-serif;
+  font-size: 1.125rem;
+  color: white;
+  display: grid;
+  place-content: center;
+}
+
+.sr_only {
+  position: absolute;
+  height: 0;
+  font-size: inherit;
+  color: transparent;
+}
+
+.container {
+  margin-inline: 1.5rem;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+.dashboard {
+  display: grid;
+  row-gap: 1.5rem;
+  /* Header */
+}
+.dashboard .dashboard_header {
+  background-color: hsl(235, 46%, 20%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+.dashboard .dashboard_header .header_avatar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: hsl(246, 80%, 60%);
+  padding: 2rem;
+  border-radius: inherit;
+}
+.dashboard .dashboard_header .header_avatar .avatar_img {
+  max-width: 4.5rem;
+  border: 0.1875rem solid white;
+  border-radius: 100vw;
+}
+.dashboard .dashboard_header .header_avatar .avatar_info {
+  color: hsl(236, 100%, 87%);
+  font-weight: 300;
+  font-size: 1rem;
+}
+.dashboard .dashboard_header .header_avatar .avatar_info .avatar_name {
+  color: white;
+  font-size: 1.40625rem;
+}
+.dashboard .dashboard_header .header_report_time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+  padding-inline: 2rem;
+}
+.dashboard .dashboard_header .header_report_time .time_daily,
+.dashboard .dashboard_header .header_report_time .time_monthly {
+  font-weight: 300;
+  color: hsl(235, 45%, 61%);
+}
+.dashboard .dashboard_header .header_report_time .time_weekly {
+  color: white;
+}/*# sourceMappingURL=main.css.map */
