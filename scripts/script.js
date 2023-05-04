@@ -54,10 +54,10 @@ function createActivities(data) {
         dashboard.appendChild(div);
     }
 
-    createEvents();
+    createEvents(data);
 }
 
-function createEvents() {
+function createEvents(data) {
   const activities = document.querySelectorAll(".dashboard_activity");
   for(const activity of activities) {
     //hover and unhover for activity
@@ -81,11 +81,29 @@ function createEvents() {
     });
   }
   //hover and unhover for time
-  const times = document.querySelectorAll("button");
-  for(const time of times) {
-    
+  const times = document.querySelectorAll(".header_report_time button");
+  let clicked = 1;
+  for(let i = 0; i < times.length; i++) {
+    times[i].addEventListener("mouseover", (event) => {
+      if(i !== clicked) {
+        times[i].style.color = "white";
+      }
+    });
+    times[i].addEventListener("mouseout", (event) => {
+      if(i !== clicked) {
+        times[i].style.color = "inherit";
+      }
+    });
+    //click for time
+    times[i].addEventListener("click", (event) => {
+      if(i !== clicked) {
+        times[i].style.color = "white";
+        times[clicked].style.color = "inherit";
+        clicked = i;
+      }
+      //function to change numbers based on data
+    });
   }
-  //click for time
 }
 
 getJson();
