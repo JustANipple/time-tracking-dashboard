@@ -53,6 +53,39 @@ function createActivities(data) {
         //append content into dashboard
         dashboard.appendChild(div);
     }
+
+    createEvents();
+}
+
+function createEvents() {
+  const activities = document.querySelectorAll(".dashboard_activity");
+  for(const activity of activities) {
+    //hover and unhover for activity
+    activity.addEventListener("mouseover", (event) => {
+      activity.setAttribute("id", "mouseOver");
+      activity.parentNode.style.transform = "translateY(-.5rem)";
+    });
+    activity.addEventListener("mouseout", (event) => {
+      activity.setAttribute("id", "");
+      activity.parentNode.style.transform = "translateY(0)";
+    });
+  }
+  //hover and unhover for dots
+  const dots = document.querySelectorAll(".header_dots");
+  for(const dot of dots) {
+    dot.addEventListener("mouseover", (event) => {
+      dot.style.filter = "brightness(1.5)";
+    });
+    dot.addEventListener("mouseout", (event) => {
+      dot.style.filter = "brightness(1)";
+    });
+  }
+  //hover and unhover for time
+  const times = document.querySelectorAll("button");
+  for(const time of times) {
+    
+  }
+  //click for time
 }
 
 getJson();

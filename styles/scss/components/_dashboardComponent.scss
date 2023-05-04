@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    transition: all .25s ease-in-out;
 
     .block_img {
         max-width: 5rem;
@@ -24,6 +25,9 @@
         padding: 1.5rem;
         margin-top: 2.5rem;
         z-index: 1;
+        transition: filter .5s ease-in-out;
+        transition: background-color .125s linear;
+        cursor: pointer;
 
         .activity_header {
             display: flex;
@@ -33,7 +37,9 @@
 
             .header_dots {
                 max-width: 1.5rem;
+                padding-block: .5rem;
                 margin-left: auto;
+                transition: filter .25s ease-in-out;
             }
         }
 
@@ -80,4 +86,8 @@
 
 #self-care {
     background-color: v.$self-care-bg;
+}
+
+#mouseOver {
+    background-color: v.$activity-hover-bg;
 }

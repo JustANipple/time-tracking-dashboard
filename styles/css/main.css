@@ -131,6 +131,7 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: all 0.25s ease-in-out;
 }
 .dashboard_block .block_img {
   max-width: 5rem;
@@ -146,6 +147,9 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem;
   margin-top: 2.5rem;
   z-index: 1;
+  transition: filter 0.5s ease-in-out;
+  transition: background-color 0.125s linear;
+  cursor: pointer;
 }
 .dashboard_block .dashboard_activity .activity_header {
   display: flex;
@@ -155,7 +159,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .dashboard_block .dashboard_activity .activity_header .header_dots {
   max-width: 1.5rem;
+  padding-block: 0.5rem;
   margin-left: auto;
+  transition: filter 0.25s ease-in-out;
 }
 .dashboard_block .dashboard_activity .activity_time {
   display: flex;
@@ -196,4 +202,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #self-care {
   background-color: hsl(43, 84%, 65%);
+}
+
+#mouseOver {
+  background-color: hsl(236, 40%, 34%);
 }/*# sourceMappingURL=main.css.map */
