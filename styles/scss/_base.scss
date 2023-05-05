@@ -5,7 +5,10 @@ body {
     font-family: v.$ff;
     font-size: v.$fs;
     color: white;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .sr_only {

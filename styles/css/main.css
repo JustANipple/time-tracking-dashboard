@@ -9,7 +9,10 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: 1.125rem;
   color: white;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .sr_only {
@@ -64,7 +67,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (min-width: 48rem) {
   .dashboard {
-    grid-template-areas: "header comp comp comp" "header comp comp comp";
+    grid-template-columns: repeat(4, 16rem);
+    grid-template-rows: repeat(2, 15rem);
     gap: 2rem;
   }
 }
@@ -78,7 +82,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (min-width: 48rem) {
   .dashboard_header {
-    grid-area: header;
+    grid-row: 1/-1;
   }
 }
 .dashboard_header .header_avatar {
@@ -89,19 +93,41 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 2rem;
   border-radius: inherit;
 }
+@media screen and (min-width: 48rem) {
+  .dashboard_header .header_avatar {
+    flex-direction: column;
+    align-items: start;
+  }
+}
 .dashboard_header .header_avatar .avatar_img {
   max-width: 4.5rem;
   border: 0.1875rem solid white;
   border-radius: 100vw;
+}
+@media screen and (min-width: 48rem) {
+  .dashboard_header .header_avatar .avatar_img {
+    max-width: 5.25rem;
+  }
 }
 .dashboard_header .header_avatar .avatar_info {
   color: hsl(236, 100%, 87%);
   font-weight: 300;
   font-size: 1rem;
 }
+@media screen and (min-width: 48rem) {
+  .dashboard_header .header_avatar .avatar_info {
+    padding-block: 1.5rem 3rem;
+  }
+}
 .dashboard_header .header_avatar .avatar_info .avatar_name {
   color: white;
   font-size: 1.40625rem;
+}
+@media screen and (min-width: 48rem) {
+  .dashboard_header .header_avatar .avatar_info .avatar_name {
+    font-size: 2.53125rem;
+    line-height: 1.125;
+  }
 }
 .dashboard_header .header_report_time {
   display: flex;
@@ -111,6 +137,14 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-inline: 2rem;
   color: hsl(235, 45%, 61%);
 }
+@media screen and (min-width: 48rem) {
+  .dashboard_header .header_report_time {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.125rem;
+    margin-block: auto;
+  }
+}
 .dashboard_header .header_report_time .time_daily,
 .dashboard_header .header_report_time .time_weekly,
 .dashboard_header .header_report_time .time_monthly {
@@ -119,6 +153,13 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+@media screen and (min-width: 48rem) {
+  .dashboard_header .header_report_time .time_daily,
+  .dashboard_header .header_report_time .time_weekly,
+  .dashboard_header .header_report_time .time_monthly {
+    padding: 0;
+  }
 }
 .dashboard_header .header_report_time .time_weekly {
   color: white;
@@ -152,6 +193,13 @@ p, h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.125s linear;
   cursor: pointer;
 }
+@media screen and (min-width: 48rem) {
+  .dashboard_block .dashboard_activity {
+    margin-block-start: auto;
+    padding: 1.75rem;
+    gap: 1rem;
+  }
+}
 .dashboard_block .dashboard_activity .activity_header {
   display: flex;
   width: 100%;
@@ -170,9 +218,20 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width: 48rem) {
+  .dashboard_block .dashboard_activity .activity_time {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .dashboard_block .dashboard_activity .activity_time .time_current {
   font-size: 1.96875rem;
   font-weight: 300;
+}
+@media screen and (min-width: 48rem) {
+  .dashboard_block .dashboard_activity .activity_time .time_current {
+    font-size: 3.375rem;
+  }
 }
 .dashboard_block .dashboard_activity .activity_time .time_last {
   color: hsl(236, 100%, 87%);

@@ -6,9 +6,8 @@
     margin-block: 5rem;
 
     @media screen and (min-width: v.$min-width) {
-        grid-template-areas: 
-        "header comp comp comp"
-        "header comp comp comp";
+        grid-template-columns: repeat(4, 16rem);
+        grid-template-rows: repeat(2, 15rem);
         gap: 2rem;
     }
 

@@ -29,6 +29,12 @@
         transition: background-color .125s linear;
         cursor: pointer;
 
+        @media screen and (min-width: v.$min-width) {
+            margin-block-start: auto;
+            padding: 1.75rem;
+            gap: 1rem;
+        }
+
         .activity_header {
             display: flex;
             width: 100%;
@@ -49,9 +55,18 @@
             justify-content: space-between;
             align-items: center;
 
+            @media screen and (min-width: v.$min-width) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
             .time_current {
                 font-size: calc(v.$fs * 1.75);
                 font-weight: v.$fw-light;
+
+                @media screen and (min-width: v.$min-width) {
+                    font-size: calc(v.$fs * 3);
+                }
             }
 
             .time_last {
